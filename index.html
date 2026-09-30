@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'">
+<title>サンプルページ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>サンプルページ</h1>
+  <p class="note">記載の値はすべて架空です。このページは、選んだファイルや入力した内容をどこにも送信しません。</p>
+</header>
+
+<main>
+<section id="upload">
+  <h2>1. ファイルを選ぶ</h2>
+  <input type="file" id="file-input" multiple>
+  <div id="drop-zone" tabindex="0">ここにファイルをドラッグ</div>
+  <ul id="file-list" aria-live="polite"></ul>
+</section>
+
+<section id="paste">
+  <h2>2. 貼り付ける</h2>
+  <div class="samples">
+    <div class="sample"><span class="label">A</span><pre id="s-a">旅券番号 TK1234567
+個人番号 123456789018
+クレジットカード番号 4111 1111 1111 1111</pre><button type="button" data-copy="s-a">コピー</button></div>
+    <div class="sample"><span class="label">B</span><pre id="s-b">見本 太郎
+taro.mihon@example.com</pre><button type="button" data-copy="s-b">コピー</button></div>
+    <div class="sample"><span class="label">C</span><pre id="s-c">東京都見本区見本町1丁目2番3号</pre><button type="button" data-copy="s-c">コピー</button></div>
+    <div class="sample"><span class="label">D</span><pre id="s-d">本日の議題: 会議室の予約方法について</pre><button type="button" data-copy="s-d">コピー</button></div>
+  </div>
+  <label for="paste-area">貼り付け先</label>
+  <textarea id="paste-area" rows="5"></textarea>
+</section>
+
+<section id="download">
+  <h2>3. ファイルを保存する</h2>
+  <ul class="downloads">
+    <li><a href="samples/sample_01.txt" download>sample_01.txt</a></li>
+    <li><a href="samples/sample_02.csv" download>sample_02.csv</a></li>
+    <li><a href="samples/sample_03.txt" download>sample_03.txt</a></li>
+    <li><a href="samples/sample_04.txt" download>sample_04.txt</a></li>
+    <li><a href="samples/sample_05.txt" download>sample_05.txt</a></li>
+    <li><a href="samples/sample_06.py" download>sample_06.py</a></li>
+    <li><a href="samples/sample_07.pem" download>sample_07.pem</a></li>
+    <li><a href="samples/sample_08.png" download>sample_08.png</a></li>
+  </ul>
+</section>
+
+<section id="print">
+  <h2>4. 印刷する</h2>
+  <div class="print-target">
+    <p>旅券番号 TK1234567 ／ 個人番号 123456789018 ／ クレジットカード番号 4111 1111 1111 1111</p>
+  </div>
+  <button type="button" id="print-button">このページを印刷</button>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
